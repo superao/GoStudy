@@ -1,0 +1,12 @@
+{
+	"ImportPath": "golang_study/day01/series",
+	"GoVersion": "go1.16",
+	"GodepVersion": "v80",
+	"Deps": [
+		{
+			"ImportPath": "github.com/easierway/concurrent_map",
+			"Comment": "v1.1.0",
+			"Rev": "7073b0dd7e9577513a78225491cb4a68e6d62a86"
+		}
+	]
+}

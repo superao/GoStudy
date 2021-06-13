@@ -1,0 +1,31 @@
+syntax = "proto3";
+
+package message;
+
+option go_package = "./message;message";
+
+// 定义客户端发送得消息格式
+message clientId {
+  uint32 id = 1;
+}
+
+// 定义服务端响应得消息格式
+message Person {
+  uint32 id = 1;
+  string name = 2;
+}
+
+// 定义回响的服务
+service SayHello {
+  rpc SayHello (clientId) returns (Person) {}
+}
+
+// 采用 protoc 编译器，编译当前文件，生成对应的 go 语言代码
+// protoc -I=./ --go_out=plugins=grpc:./message ./message/message.proto
+// -I= 表示 proto 文件的来源路径
+// --go_out= 表示 protoc 编译器所生成的文件路径，plugins=grpc: 表示在编译的时候采用 grpc 框架，
+// go_out 表示生成 go 语言版的文件，还有很多语言比如: java_out、C++_out 等等
+// 最后的文件表示编译器所编译的 proto 文件
+
+
+

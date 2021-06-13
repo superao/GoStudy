@@ -1,0 +1,26 @@
+// 指定当前文件所使用的 protobuf 的语法版本
+syntax = "proto3";
+
+// 指定生成的包名称
+package person;
+
+// 指定生成的文件目录以及对应的文件包名称
+option go_package = "./person;person";
+
+// 指定序列化的消息格式
+message person {
+  string name = 1;
+  uint32 id = 2;
+  gender sex = 3;
+}
+
+// 采用 protoc 编译当前文件，生成对应的 go 语言代码
+// protoc -I=./ --go_out=. ./person.proto
+
+// 性别类型
+// 枚举类型第一个字段必须为 0
+enum gender {
+  boy = 0;
+  girl = 1;
+  unknown = 2;
+}
