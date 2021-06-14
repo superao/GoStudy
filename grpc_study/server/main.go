@@ -1,11 +1,11 @@
 package main
 
 import (
+	"GoStudy/grpc_study/message/message"
 	"context"
 	"fmt"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/reflection"
-	"grpc_study/message/message"
 	"net"
 )
 
